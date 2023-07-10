@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.example.currencyconvertion.model.Currency;
 import com.example.currencyconvertion.model.Data;
 import com.example.currencyconvertion.network.CurrencyApi;
 import com.example.currencyconvertion.network.CurrencyService;
@@ -28,10 +29,9 @@ public class ExampleUnitTest {
     @Test
     public void getCurrency() throws IOException {
         CurrencyService currencyService = new CurrencyApi().createCurrencyService();
-        Call<Data> call = currencyService.fetchProducts("AUD");
-        Data apiKeys = call.execute().body();
+        Call<Currency> call = currencyService.fetchProducts("QiUyWrY2VlmfRLYT1DB3ASbwLPmkkxcoZhhiSseR");
+        Currency apiKeys = call.execute().body();
         assertNotNull(apiKeys);
-        assertFalse(apiKeys.);
         System.out.println(new Gson().toJson(apiKeys));
     }
 }

@@ -7,7 +7,7 @@ public class CurrencyApi {
 
     public CurrencyService createCurrencyService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://app.freecurrencyapi.com/")
+                .baseUrl("https://api.freecurrencyapi.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         CurrencyService currencyService = retrofit.create(CurrencyService.class);
